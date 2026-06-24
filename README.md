@@ -33,7 +33,7 @@ en operaciones mineras.
 
 ## 🗂️ Estructura del Proyecto
 
-mining-eda-flotation-plant/
+mining_eda_flotation_plant/
 
 ├── data/
 
@@ -44,6 +44,12 @@ mining-eda-flotation-plant/
 ├── notebooks/
 
 │   └── EDA_Flotation_Plant_RRiveros.ipynb
+
+├── src/
+
+│   ├── init.py
+
+│   └── plots.py          ← Módulo de visualizaciones
 
 ├── reports/
 
@@ -59,6 +65,7 @@ mining-eda-flotation-plant/
 
 ## ⚙️ Reproducir el Entorno
 
+
 ```bash
 conda create -n mining-eda python=3.11 -y
 conda activate mining-eda
@@ -69,17 +76,33 @@ pip install -r requirements.txt
 
 ## 🔍 Hallazgos Principales
 
-> *(Se completan al finalizar el análisis)*
+- 🔹 **El hierro es estable y confiable:** CV% de 1.72%, media 65.05%.
+  El proceso cumple estándares comerciales en el 91.3% del tiempo operativo.
 
-- 🔹 Hallazgo 1:
-- 🔹 Hallazgo 2:
-- 🔹 Hallazgo 3:
+- 🔹 **La sílice es la variable crítica:** CV% de 48.37% con distribución 
+  asimétrica positiva. Se detectaron 6 días con ambas variables fuera de 
+  referencia simultáneamente, agrupados en dos bloques: abril–mayo y 
+  agosto–septiembre 2017.
+
+- 🔹 **El flujo de aire es la palanca operativa más efectiva:** 
+  Las Columnas 01 y 03 muestran la correlación negativa más fuerte 
+  con la sílice (-0.219). Mayor aireación → menor impureza en el concentrado.
+
+- 🔹 **El sistema opera de forma reactiva:** La Amina Flow actúa como 
+  indicador de inestabilidad (feedback loop): sus picos revelan momentos 
+  donde la planta lucha contra exceso de sílice.
+
+- 🔹 **Parada de planta confirmada:** Gap de 12 días consecutivos 
+  (17–28 marzo) consistente con mantenimiento mayor programado.
 
 ---
 
 ## 📊 Visualizaciones
 
-> *(Se agregan capturas al finalizar el análisis)*
+![Distribución de Calidad](images/distribucion_calidad.png)
+![Evolución Temporal](images/evolucion_temporal_calidad.png)
+![Heatmap de Correlaciones](images/heatmap_correlaciones.png)
+![Correlación con Sílice](images/correlacion_silice.png)
 
 ---
 
@@ -98,3 +121,8 @@ Ver [`reports/INFORME_EJECUTIVO.md`](reports/INFORME_EJECUTIVO.md)
 | Matplotlib / Seaborn | Visualización |
 | Jupyter Notebook | Desarrollo y documentación |
 | GitHub | Control de versiones y portfolio |
+
+## 📚 Referencias
+
+Wilson, G. et al. (2017). *Good Enough Practices in Scientific Computing.*  
+PLOS Computational Biology. https://doi.org/10.1371/journal.pcbi.1005510
