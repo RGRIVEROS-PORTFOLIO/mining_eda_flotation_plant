@@ -270,3 +270,10 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+
+# Python cache
+src/__pycache__/
+notebooks/__pycache__/
+**/__pycache__/
+**/*.pyc
